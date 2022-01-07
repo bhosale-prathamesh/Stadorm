@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-c@snfk8jsxux52#+y!*xd5p82o47+(71nq6$zv%z-4d@9rj1hs
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['stadorm.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -80,10 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
-        'NAME': 'Stadorm$Stadorm',
-        'USER': 'Stadorm',
-        'PASSWORD': 'Decent@124',
-        'HOST': 'Stadorm.mysql.pythonanywhere-services.com',
+        'NAME': 'bkswbs4odw5c3n23xb77',
+        'USER': 'ucvuplrivukdot0v',
+        'PASSWORD': '2yEAa5V6jv16Bm1d6sq7',
+        'HOST': 'bkswbs4odw5c3n23xb77-mysql.services.clever-cloud.com',
         'PORT': '3306',
     }
 }
@@ -126,7 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/Stadorm/Room-Booking-System/Project/app/static'
+STATIC_ROOT = '/home/Stadorm/Stadorm/Project/app/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
