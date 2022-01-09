@@ -31,6 +31,9 @@ class Transaction(models.Model):
     email = models.CharField(max_length=45, blank=True, null=True)
     number = models.CharField(max_length=45, blank=True, null=True)
 
+    def __str__(self):
+        return f"{self.email} ({self.transactionid})"
+
     class Meta:
         managed = False
         db_table = 'Transaction'
