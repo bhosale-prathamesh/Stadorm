@@ -81,10 +81,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
-        'NAME': 'bkswbs4odw5c3n23xb77',
-        'USER': 'ucvuplrivukdot0v',
-        'PASSWORD': '2yEAa5V6jv16Bm1d6sq7',
-        'HOST': 'bkswbs4odw5c3n23xb77-mysql.services.clever-cloud.com',
+        'NAME': 'stadorm',
+        'USER': 'admin',
+        'PASSWORD': 'Decent124',
+        'HOST': 'stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
@@ -129,7 +129,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/ubuntu/Stadorm/Project/app/static'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
