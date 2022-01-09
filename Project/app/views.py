@@ -15,10 +15,10 @@ def login(request):
             return render(request,'login.html')
         else:
             db = mysql.connector.connect(
-                    host='Stadorm.mysql.pythonanywhere-services.com',
-                    username='Stadorm',
-                    password='Decent@124',
-                    database='Stadorm$Stadorm'
+                    host='stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
+                    username='admin',
+                    password='Decent124',
+                    database='stadorm'
                 )
             cur = db.cursor()
 
@@ -56,10 +56,10 @@ def signup(request):
             return render(request,'signup.html')
         else:
             db = mysql.connector.connect(
-                    host='Stadorm.mysql.pythonanywhere-services.com',
-                    username='Stadorm',
-                    password='Decent@124',
-                    database='Stadorm$Stadorm'
+                    host='stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
+                    username='admin',
+                    password='Decent124',
+                    database='stadorm'
                 )
 
             cur = db.cursor()
@@ -80,10 +80,10 @@ def signup(request):
 
 def home(request,userId, username):
     db = mysql.connector.connect(
-                host='Stadorm.mysql.pythonanywhere-services.com',
-                username='Stadorm',
-                password='Decent@124',
-                database='Stadorm$Stadorm'
+                host='stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
+                username='admin',
+                password='Decent124',
+                database='stadorm'
             )
     cur = db.cursor()
     sql = "SELECT * FROM Product WHERE type = 'r';"
@@ -97,10 +97,10 @@ def home(request,userId, username):
 
 def rooms(request,userId, username):
     db = mysql.connector.connect(
-                host='Stadorm.mysql.pythonanywhere-services.com',
-                username='Stadorm',
-                password='Decent@124',
-                database='Stadorm$Stadorm'
+                host='stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
+                username='admin',
+                password='Decent124',
+                database='stadorm'
             )
     cur = db.cursor()
     sql = "SELECT * FROM Product WHERE type = 'r';"
@@ -119,10 +119,10 @@ def details(request,userId,username,productId):
             length = 0
         return redirect('/checkout/'+str(userId)+'/'+str(username)+'/'+str(productId)+'/'+str(length)+'/')
     db = mysql.connector.connect(
-                host='Stadorm.mysql.pythonanywhere-services.com',
-                username='Stadorm',
-                password='Decent@124',
-                database='Stadorm$Stadorm'
+                host='stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
+                username='admin',
+                password='Decent124',
+                database='stadorm'
             )
     cur = db.cursor()
     sql = "SELECT * FROM Product where productId = '"+str(productId)+"';"
@@ -136,10 +136,10 @@ def details(request,userId,username,productId):
 
 def checkout(request,userId,username,productId,length):
     db = mysql.connector.connect(
-                host='Stadorm.mysql.pythonanywhere-services.com',
-                username='Stadorm',
-                password='Decent@124',
-                database='Stadorm$Stadorm'
+                host='stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
+                username='admin',
+                password='Decent124',
+                database='stadorm'
             )
     cur = db.cursor()
     if (request.method == 'POST'):
@@ -184,10 +184,10 @@ def subscription(request,userId, username):
 
 def confirmation(request,userId,username,productId,transactionId):
     db = mysql.connector.connect(
-                host='Stadorm.mysql.pythonanywhere-services.com',
-                username='Stadorm',
-                password='Decent@124',
-                database='Stadorm$Stadorm'
+                host='stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
+                username='admin',
+                password='Decent124',
+                database='stadorm'
             )
     cur = db.cursor()
     sql = f"SELECT * FROM Transaction Where transactionId = {transactionId};"
