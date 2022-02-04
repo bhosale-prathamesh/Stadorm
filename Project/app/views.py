@@ -3,7 +3,6 @@ from django.contrib import messages
 import mysql.connector
 import json
 from datetime import datetime
-import pyautogui as pag
 
 # Create your views here.
 def login(request):
