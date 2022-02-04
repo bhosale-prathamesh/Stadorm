@@ -43,7 +43,7 @@
                                 <span></span>
                             </div>
                         </div>
-                        <div class="navbar__menu"><a class="navbar__item " href="/rooms/{{userId}}/{{username}}/" alt="Rooms">Find Rooms</a></div>
+                        <div class="navbar__menu"><a class="navbar__item " href="/rooms" alt="Rooms">Find Rooms</a></div>
                     </div>
                     <div class="navbar__brand">
 
@@ -53,7 +53,7 @@
 
                     </div>
                     <div class="navbar__end">
-                        <a class='navbar__item is-hidden-mobile' href="/subscription/{{userId}}/{{username}}/">Food Subscription</a>
+                        <a class='navbar__item is-hidden-mobile' href="/subscription">Food Subscription</a>
 
 
                         <!-- <a class='navbar__item is-hidden-mobile' href="login.html">Sign in</a> -->
@@ -75,7 +75,7 @@
                                 alt="Rooms">Find Rooms</a>
                             <div class="navbar-burger-divider"></div>
 
-                            <a class="navbar-burger-list__item" href="/subscription/{{userId}}/{{username}}/" alt="Subscribe">Food Subscription</a>
+                            <a class="navbar-burger-list__item" href="/subscription" alt="Subscribe">Food Subscription</a>
 
                             <div class="navbar-burger-divider"></div>
                         </div>
@@ -118,7 +118,7 @@
                                         Working Professionals.</p>
                                     <a class="slideshow__button button"
                                         style="background-color: #262626 !important; color: #ffffff !important;"
-                                        href="/rooms/{{userId}}/{{username}}/" >Find Rooms</a>
+                                        href="/rooms" >Find Rooms</a>
                                 </div>
                             </div>
                         </div>
@@ -295,7 +295,7 @@
                         </div>
                         <div class="homepage-products__cards">
                         {% for i in a %}
-                            <a href="/details/{{userId}}/{{username}}/{{i.0}}" class="homepage-products-card">
+                            <a href="/details/{{i.0}}" class="homepage-products-card">
                                 <div class="homepage-products-card__image">
                                    
                                     <picture>
@@ -351,7 +351,7 @@
                         <div class="glide__track" data-glide-el="track">
                             <div class="glide__slides homepage-products-slider__slides">
                             {% for i in a %}
-                                <a href="/details/{{userId}}/{{username}}/{{i.0}}" class="homepage-products-card">
+                                <a href="/details/{{i.0}}" class="homepage-products-card">
                                     <div class="homepage-products-card__image">
                                         
                                         <picture>
@@ -576,7 +576,7 @@
                                     <div class="global-reviews-new__reviews">
 
                                         <div class="global-reviews-new__review">
-                                            <a href="/details/{{userId}}/{{username}}/1" class="message-box message-box--one">
+                                            <a href="/details/1" class="message-box message-box--one">
                                                 <div class="message-box__text">
                                                     <p></p>
                                                     <p>The best place I've stayed in. There's a very diverse group of friendly people to meet and socialize with. I'm grateful to have made some awesome friends by staying here. 🙌
@@ -587,7 +587,7 @@
                                         </div>
 
                                         <div class="global-reviews-new__review">
-                                            <a href="/details/{{userId}}/{{username}}/1" class="message-box message-box--one">
+                                            <a href="/details/1" class="message-box message-box--one">
                                                 <div class="message-box__text">
                                                     <p></p>
                                                     <p>Affordable coliving Place for long-term, quite peaceful and fun place to rent. Easy access to local transport and shops 💯</p>
@@ -597,7 +597,7 @@
                                         </div>
 
                                         <div class="global-reviews-new__review">
-                                            <a href="/details/{{userId}}/{{username}}/1" class="message-box message-box--one">
+                                            <a href="/details/1" class="message-box message-box--one">
                                                 <div class="message-box__text">
                                                     <p></p>
                                                     <p>Friendly, welcoming service.good customer experience. Great coliving area. Worth it! 🙏</p>

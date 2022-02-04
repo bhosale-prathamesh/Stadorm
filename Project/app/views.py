@@ -78,7 +78,7 @@ def signup(request):
 
     return render(request,'signup.html')
 
-def home(request,userId, username):
+def home(request):
     db = mysql.connector.connect(
                 host='stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
                 username='admin',
@@ -93,9 +93,9 @@ def home(request,userId, username):
     for i in range(len(a)):
         a[i].append(json.loads(a[i][5])[0])
 
-    return render(request,'index.html',context={'userId':userId,'username':username,'a':a})
+    return render(request,'index.html')
 
-def rooms(request,userId, username):
+def rooms(request):
     db = mysql.connector.connect(
                 host='stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
                 username='admin',
@@ -109,15 +109,15 @@ def rooms(request,userId, username):
     a = list([list(i) for i in a])
     for i in range(len(a)):
         a[i].append(json.loads(a[i][5])[0])
-    return render(request,'rooms.html',context={'userId':userId,'username':username,'a':a})
+    return render(request,'rooms.html')
 
-def details(request,userId,username,productId):
+def details(request,productId):
     if (request.method == 'POST'):
         if request.POST.get("subscription") == 'true':
             length = request.POST.get("length")
         else:
             length = 0
-        return redirect('/checkout/'+str(userId)+'/'+str(username)+'/'+str(productId)+'/'+str(length)+'/')
+        return redirect('/checkout/'+str(productId)+'/'+str(length)+'/')
     db = mysql.connector.connect(
                 host='stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
                 username='admin',
@@ -132,9 +132,9 @@ def details(request,userId,username,productId):
     images = json.loads(a[5])
     db.commit()
 
-    return render(request,'details.html',context={'userId':userId,'username':username,'productId':productId,'a':a,'images':images})
+    return render(request,'details.html',context={'productId':productId,'a':a,'images':images})
 
-def checkout(request,userId,username,productId,length):
+def checkout(request,productId,length):
     db = mysql.connector.connect(
                 host='stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
                 username='admin',
@@ -169,7 +169,7 @@ def checkout(request,userId,username,productId,length):
         a = cur.fetchall()
         transactionId = list(a[0])[0]
         db.commit()
-        return redirect(f'/confirmation/{userId}/{username}/{productId}/{transactionId}/')
+        return redirect(f'/confirmation/{productId}/{transactionId}/')
 
     sql = f"SELECT * FROM Product where productId = {productId}"
     cur.execute(sql)
@@ -177,12 +177,12 @@ def checkout(request,userId,username,productId,length):
     a = list(a[0])
     image = json.loads(a[5])[0]
 
-    return render(request,'checkout.html',{'userId':userId,'username':username,'a':a,'image':image})
+    return render(request,'checkout.html',{'a':a,'image':image})
 
-def subscription(request,userId, username):
-    return render(request,'subscription.html',{'userId':userId,'username':username})
+def subscription(request):
+    return render(request,'subscription.html')
 
-def confirmation(request,userId,username,productId,transactionId):
+def confirmation(request,productId,transactionId):
     db = mysql.connector.connect(
                 host='stadorm.cyw0lj2jrms0.ap-south-1.rds.amazonaws.com',
                 username='admin',
