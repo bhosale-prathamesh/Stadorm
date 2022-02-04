@@ -3,6 +3,7 @@ from django.contrib import messages
 import mysql.connector
 import json
 from datetime import datetime
+import pyautogui as pag
 
 # Create your views here.
 def login(request):
@@ -93,7 +94,7 @@ def home(request):
     for i in range(len(a)):
         a[i].append(json.loads(a[i][5])[0])
 
-    return render(request,'index.html')
+    return render(request,'index.html',context={'a':a})
 
 def rooms(request):
     db = mysql.connector.connect(
@@ -107,9 +108,10 @@ def rooms(request):
     cur.execute(sql)
     a = cur.fetchall()
     a = list([list(i) for i in a])
+
     for i in range(len(a)):
         a[i].append(json.loads(a[i][5])[0])
-    return render(request,'rooms.html')
+    return render(request,'rooms.html',context={'a':a})
 
 def details(request,productId):
     if (request.method == 'POST'):
